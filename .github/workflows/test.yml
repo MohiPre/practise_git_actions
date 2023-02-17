@@ -1,0 +1,26 @@
+name: 04scriptpractise
+on: push
+
+jobs:
+  mytestjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step1 this is testing
+      - uses: actions/checkout@v3
+        run: |
+        npm ci
+        npm test
+        
+
+  mydeployjib:
+    needs:  mytestjob
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step1 in deploy
+      - uses: actions/checkout@v3
+        run: |
+        npm ci
+        npm test
+        npm run lint
+        npm run build
+        echo " Build seccess"
