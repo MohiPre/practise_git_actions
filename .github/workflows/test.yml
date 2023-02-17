@@ -6,10 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Step1 this is testing
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
+      - name : Step 2
         run: |
-        npm ci
-        npm test
+         npm ci
+         npm test
         
 
   mydeployjib:
@@ -17,10 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Step1 in deploy
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
+      - name: Step 2 in deploy
         run: |
-        npm ci
-        npm test
-        npm run lint
-        npm run build
-        echo " Build seccess"
+          npm ci
+          npm test
+          npm run lint
+          npm run build
+          echo " Build seccess"
